@@ -2,8 +2,6 @@ sudo:required
 serbices:docker
 
 before_install:
-    - docker-compose up --build -d
+    - docker-compose up --build
 script:
-    - docker exec -it datasenv_build_env bash
-    - ls work/DNNMNIST
-    - python torch_Predict_num.py
+    - docker exec -it datasenv_build_env_1 bash
