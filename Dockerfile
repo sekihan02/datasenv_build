@@ -20,9 +20,15 @@ RUN wget https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh && 
 ENV PATH /opt/anaconda3/bin:$PATH
 # pipをインストール
 RUN pip install --upgrade pip && pip install \
+	seaborn \
 	torch==1.5.0+cpu torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html \
+	xgboost \
+	lightgbm \
+	optuna \
 	opencv-python \
-	music21
+	scikit-image \
+	pandas-profiling \
+	folium
 # ワークスペースを元に戻す
 WORKDIR /
 # runした時にjupyter labをlocalhostで起動し、root、パスなし
